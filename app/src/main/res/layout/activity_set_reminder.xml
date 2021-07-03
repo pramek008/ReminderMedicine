@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        android:layout_marginHorizontal="10dp">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="20px"
+            android:src="@android:drawable/ic_lock_idle_alarm"
+            />
+
+        <EditText
+            android:id="@+id/titleWaktu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="WaktuMinum" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginHorizontal="10dp">
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="20px"
+            android:src="@android:drawable/ic_input_get"/>
+
+        <EditText
+            android:id="@+id/titleObat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama Obat"
+            android:layout_marginVertical="20dp"/>
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/pickTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Pilih Waktu"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/pickDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Pilih Tanggal"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+
+    <!--    <TimePicker-->
+<!--        android:id="@+id/timePicker"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp" />-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp">-->
+<!--        <Button-->
+<!--            android:id="@+id/setBtn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            android:text="SET"/>-->
+<!--        <Button-->
+<!--            android:id="@+id/cencelBtn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            android:text="BATAL"/>-->
+<!--    </LinearLayout>-->
+</LinearLayout>
