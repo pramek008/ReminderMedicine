@@ -11,9 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -36,8 +34,6 @@ import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-
-import static java.util.Calendar.MINUTE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -68,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         Intent notificationIntent = new Intent(this, Notifikasi.class);
         notificationIntent.putExtra(Notifikasi.NOTIFICATION_ID, 1);
         notificationIntent.putExtra(Notifikasi.NOTIFICATION, notification);
-        notificationIntent.putExtra(Notifikasi.NOTIFICATION, (Parcelable) obat);
+//        notificationIntent.putExtra(Notifikasi.NOTIFICATION, (Parcelable) obat);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) getLayoutInflater().getContext().getSystemService(Context.ALARM_SERVICE);
         if (alarmManager != null) {
@@ -83,14 +79,14 @@ public class MainActivity extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getLayoutInflater().getContext(), default_notification_channel_id);
-        builder.setContentTitle("Pengingat Minum Obat");
-        builder.setContentText(content);
-        builder.setContentIntent(pendingIntent);
-        builder.setAutoCancel(true);
-        builder.setSmallIcon(android.R.drawable.ic_dialog_info);
-        builder.setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND);
-        builder.setChannelId(NOTIFICATION_CHANNEL_ID);
-        builder.setPriority(NotificationCompat.PRIORITY_HIGH);
+            builder.setContentTitle("Pengingat Minum Obat");
+            builder.setContentText(content);
+            builder.setContentIntent(pendingIntent);
+            builder.setAutoCancel(true);
+            builder.setSmallIcon(android.R.drawable.ic_dialog_info);
+            builder.setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND);
+            builder.setChannelId(NOTIFICATION_CHANNEL_ID);
+            builder.setPriority(NotificationCompat.PRIORITY_HIGH);
         return builder.build();
     }
 
@@ -112,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
     //Mengambil seluruh data dari database ke listview
     private void populateListView() {
         try {
-            ArrayList<ModelData> items = databaseHelper.getAllData();
+            ArrayList<Alarm> items = databaseHelper.getAllData();
             ItemAdapter itemsAdopter = new ItemAdapter(this, items);
             itemsListView.setAdapter(itemsAdopter);
             itemsAdopter.notifyDataSetChanged();

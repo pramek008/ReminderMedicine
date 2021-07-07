@@ -1,6 +1,6 @@
 package com.example.reminderapp2;
 
-public class ModelData {
+public class Alarm {
 
     int id;
     private String title;
@@ -8,7 +8,7 @@ public class ModelData {
     private String time;
     private String date;
 
-    ModelData(int id, String title, String obat, String time, String date) {
+    Alarm(int id, String title, String obat, String time, String date) {
         this.id = id;
         this.title = title;
         this.obat = obat;

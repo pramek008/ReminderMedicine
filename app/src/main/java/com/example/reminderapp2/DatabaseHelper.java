@@ -27,11 +27,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-//        String createTable = "CREATE TABLE " + TABLE_NAME + "(" +
-//                ""                + COL1 + " integer primary key, " +
-//                ""                + COL2 + " TEXT, " +
-//                ""                + COL3 + " TEXT," +
-//                ""                + COL4 + " TIME" + ")";
 
         String createTable = "CREATE TABLE " + TABLE_NAME + "(" +
                 ""                + COL1 + " integer primary key, " +
@@ -72,8 +67,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Memuat semua data ke listview
-    public ArrayList<ModelData> getAllData() {
-        ArrayList<ModelData> arrayList = new ArrayList<>();
+    public ArrayList<Alarm> getAllData() {
+        ArrayList<Alarm> arrayList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME;
         @SuppressLint("Recycle")
@@ -85,8 +80,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             String title2 = cursor.getString(2);
             String date = cursor.getString(3);
             String time = cursor.getString(4);
-            ModelData modelData = new ModelData(id, title, title2, date, time);
-            arrayList.add(modelData);
+            Alarm alarm = new Alarm(id, title, title2, date, time);
+            arrayList.add(alarm);
         }
         db.close();
         return arrayList;

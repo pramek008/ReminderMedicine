@@ -22,6 +22,7 @@ public class Notifikasi extends BroadcastReceiver {
             assert notificationManager != null;
             notificationManager.createNotificationChannel(notificationChannel);
         }
+
         int id = intent.getIntExtra(NOTIFICATION_ID, 0);
         if (notificationManager != null) {
             notificationManager.notify(id, notification);

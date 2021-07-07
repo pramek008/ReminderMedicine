@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,9 +16,9 @@ import java.util.ArrayList;
 public class ItemAdapter extends BaseAdapter {
 
     private Context context;
-    private ArrayList<ModelData> arrayList;
+    private ArrayList<Alarm> arrayList;
 
-    public ItemAdapter(Context context, ArrayList<ModelData> arrayList) {
+    public ItemAdapter(Context context, ArrayList<Alarm> arrayList) {
         super();
         this.context = context;
         this.arrayList = arrayList;
@@ -62,11 +61,11 @@ public class ItemAdapter extends BaseAdapter {
             }
         });
         String x;
-        ModelData modelData = arrayList.get(position);
-        kapanMinum.setText(modelData.getTitle());
-        namaObat.setText(modelData.getObat());
-        dateTv.setText(modelData.getDate());
-        timeTv.setText(modelData.getTime());
+        Alarm alarm = arrayList.get(position);
+        kapanMinum.setText(alarm.getTitle());
+        namaObat.setText(alarm.getObat());
+        dateTv.setText(alarm.getDate());
+        timeTv.setText(alarm.getTime());
         return convertView;
     }
 
